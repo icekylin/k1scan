@@ -4,6 +4,8 @@ FOFA Get only host, POC Batch testing, merge&amp;dedup
 
 为了刷公益 SRC 诞生的小工具
 
+使用示例参考: <https://www.yuque.com/ky1in7/blog/cxe3d5>
+
 ## ⭐️ 主要功能
 
 1. FOFA信息收集
