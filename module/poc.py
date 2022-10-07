@@ -38,7 +38,7 @@ class PocCheck:
                 pass
         elif method == "POST":
             try:
-                resp = requests.post(test_url, timeout=timeout)
+                resp = requests.post(test_url, timeout=timeout, data=data)
                 return resp
             except Exception as e:
                 pass

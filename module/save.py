@@ -1,7 +1,7 @@
 import os
 
 # 检测 results 文件夹是否存在
-path = 'results'
+path = '../results'
 if not os.path.exists(path):
     os.mkdir(path)
 

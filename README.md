@@ -6,6 +6,8 @@ FOFA Get only host, POC Batch testing, merge&amp;dedup
 
 使用示例参考: <https://www.yuque.com/ky1in7/blog/cxe3d5>
 
+很简单的 demo, 好不好用先不说, 反正肯定能用
+
 ## ⭐️ 主要功能
 
 1. FOFA信息收集

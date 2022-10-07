@@ -1,5 +1,5 @@
 import base64
-import httpx
+import requests
 import yaml
 
 
@@ -13,7 +13,7 @@ def fofa(rules):
         # 以安全的模式加载 yaml, 作为待执行用例
         test_list.append(yaml.safe_load(f))
         case = test_list[0]
-        print(case)
+        # print(case) # 输出 Yaml 配置文件
         fofa_email = case['fofa_api']['fofa_email']
         fofa_key = case['fofa_api']['fofa_key']
         fofa_api = f'https://fofa.info/api/v1/search/all?email={fofa_email}&key={fofa_key}'
@@ -26,16 +26,15 @@ def fofa(rules):
     # 拼接请求 URL
     fofa_api = fofa_api+fofa_fields+fofa_size
     try:    # 仅 return results 的 json 结果
-        print(f'请求链接: [{fofa_api}]')
-        print(f'请求规则: [{rules_cache}]')
-        resp = httpx.get(fofa_api)
+        resp = requests.get(fofa_api)
         # 返回 json 数据
         fofa_results = resp.json()['results']
         _len = len(fofa_results)
         if _len == 0:
-            print('未搜索到相关数据')
+            print('[INFO] 未搜索到相关数据')
+            return False
         else:
-            print(f'共返回: [{_len}] 条数据')
+            print(f'[INFO] 共找到: [{_len}] 条结果')
             return fofa_results
     except Exception as e:
         print(e)
